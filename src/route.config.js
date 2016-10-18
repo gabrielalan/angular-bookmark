@@ -1,7 +1,9 @@
 function routeConfig($routeProvider) {
 	$routeProvider
 		.when('/home', {
-			templateUrl: 'src/Home/_home.html'
+			templateUrl: 'src/Home/_home.html',
+			controller: 'MainController',
+			controllerAs: 'home'
 		})
 		.when('/todo', {
 			templateUrl: 'src/TodoList/_list.html',
