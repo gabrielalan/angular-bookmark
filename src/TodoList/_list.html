@@ -7,7 +7,7 @@
 	<button ng-click="main.order = 'value'" class="btn btn-default">Order by value</button>
 
 	<ul class="list-group">
-		<li ng-repeat="task in main.list | orderBy: main.order | filter: search" class="list-group-item" ng-hide="task.completed">
+		<li ng-repeat="task in main.list | orderBy: main.order | filter: search" class="list-group-item slideIn" ng-hide="task.completed">
 			{{task.text}} - {{task.value | currency: 'R$'}}
 			<button ng-click="main.removeTask(task)">remove</button>
 		</li>

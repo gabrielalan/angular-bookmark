@@ -1,3 +1,40 @@
 .container {
 	margin-top: 70px;
 }
+
+main.ng-enter {
+	transition: all .5s ease-in-out;
+	opacity: 0;
+}
+
+main.ng-enter.ng-enter-active {
+	opacity: 1;
+}
+
+.slideIn.ng-enter {
+	max-height: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	overflow: hidden;
+	transition: all .2s ease-in-out;
+}
+
+.slideIn.ng-enter.ng-enter-active {
+	max-height: 50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.slideIn.ng-leave {
+	max-height: 50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	overflow: hidden;
+	transition: all .2s ease-in-out;
+}
+
+.slideIn.ng-leave.ng-leave-active {
+	max-height: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}

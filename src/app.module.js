@@ -1,2 +1,2 @@
 angular
-	.module('todoApp', ['ngRoute']);
+	.module('todoApp', ['ngRoute', 'ngAnimate']);

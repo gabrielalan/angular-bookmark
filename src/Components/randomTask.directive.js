@@ -5,6 +5,8 @@ function randomTask() {
 			list: '='
 		},
 		templateUrl: 'src/Components/randomTask.html',
+		transclude: true,
+		replace: true,
 		controller: 'RandomTaskController',
 		controllerAs: 'random',
 		bindToController: true
