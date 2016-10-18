@@ -1,0 +1,27 @@
+{
+  "name": "angular-bookmark",
+  "version": "1.0.0",
+  "description": "Angular Bookmark",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "material-design-lite": "^1.2.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielalan/angular-bookmark.git"
+  },
+  "keywords": [
+    "Bookmark"
+  ],
+  "author": "Gabriel Alan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielalan/angular-bookmark/issues"
+  },
+  "homepage": "https://github.com/gabrielalan/angular-bookmark#readme"
+}

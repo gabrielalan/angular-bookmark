@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="todoApp">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Todo</title>
+
+	<link rel="stylesheet" href="node_modules/material-design-lite/dist/material.cyan-light_blue.min.css">
+	<link rel="stylesheet" href="assets/styles.css">
+
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="node_modules/material-design-lite/dist/material.min.js"></script>
+	<script src="src/app.module.js"></script>
+	<script src="src/TodoList/main.controller.js"></script>
+</head>
+<body>
+	<header ng-include="'src/Header/_header.html'"></header>
+
+	<div ng-controller="MainController as main" class="">
+		<div class="mdl-grid">
+			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+				<input class="mdl-textfield__input" type="text" id="search" ng-model="search">
+				<label class="mdl-textfield__label" for="search">Search</label>
+			</div>
+		</div>
+
+		<button ng-click="main.order = 'text'">Order by text</button>
+		<button ng-click="main.order = 'value'">Order by value</button>
+
+		<ul class="mdl-list">
+			<li ng-repeat="task in main.list | orderBy: main.order | filter: search" class="mdl-list__item" ng-hide="task.completed">
+				{{task.text}} - {{task.value | currency: 'R$'}}
+				<button ng-click="main.removeTask(task)">remove</button>
+			</li>
+		</ul>
+
+		<form ng-submit="main.addTask(newTask)">
+			<input type="text" ng-model="newTask.text" />
+			<input type="text" ng-model="newTask.value" />
+			<button type="submit">send</button>
+		</form>
+	</div>
+</body>
+</html>
