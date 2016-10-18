@@ -1,0 +1,17 @@
+[
+	{
+		"text": "B Text",
+		"completed": false,
+		"value": 50
+	},
+	{
+		"text": "A Text",
+		"completed": false,
+		"value": 100
+	},
+	{
+		"text": "C Text",
+		"completed": false,
+		"value": 70
+	}
+]

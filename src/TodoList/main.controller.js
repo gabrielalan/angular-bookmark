@@ -1,29 +1,7 @@
-angular
-	.module('todoApp')
-	.controller('MainController', MainController);
-
-function MainController() {
+function MainController($http) {
 	var me = this;
 
 	me.order = 'text';
-
-	me.list = [
-		{
-			text: "B Text",
-			completed: false,
-			value: 50
-		},
-		{
-			text: "A Text",
-			completed: false,
-			value: 100
-		},
-		{
-			text: "C Text",
-			completed: false,
-			value: 70
-		}
-	];
 
 	me.addTask = function(newTask) {
 		me.list.push({
@@ -40,4 +18,16 @@ function MainController() {
 			return current.text !== task.text;
 		});
 	};
+
+	$http
+		.get('server/list.php')
+		.success(function(data){
+			me.list = data;
+		});
 }
+
+MainController.$inject = ['$http'];
+
+angular
+	.module('todoApp')
+	.controller('MainController', MainController);

@@ -9,34 +9,16 @@
 	<link rel="stylesheet" href="assets/styles.css">
 
 	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="node_modules/angular-route/angular-route.min.js"></script>
 	<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="src/app.module.js"></script>
+	<script src="src/route.config.js"></script>
+	<script src="src/Header/header.controller.js"></script>
 	<script src="src/TodoList/main.controller.js"></script>
 </head>
 <body>
 	<header ng-include="'src/Header/_header.html'"></header>
-
-	<div ng-controller="MainController as main" class="container">
-		<div class="mdl-grid">
-			<input class="form-control" type="text" id="search" ng-model="search" placeholder="Search" />
-		</div>
-
-		<button ng-click="main.order = 'text'" class="btn btn-default">Order by text</button>
-		<button ng-click="main.order = 'value'" class="btn btn-default">Order by value</button>
-
-		<ul class="list-group">
-			<li ng-repeat="task in main.list | orderBy: main.order | filter: search" class="list-group-item" ng-hide="task.completed">
-				{{task.text}} - {{task.value | currency: 'R$'}}
-				<button ng-click="main.removeTask(task)">remove</button>
-			</li>
-		</ul>
-
-		<form ng-submit="main.addTask(newTask)">
-			<input type="text" ng-model="newTask.text" class="form-control" />
-			<input type="number" ng-model="newTask.value" class="form-control" />
-			<button type="submit" class="btn btn-default">send</button>
-		</form>
-	</div>
+	<main ng-view></main>
 </body>
 </html>

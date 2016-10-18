@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top" ng-controller="HeaderController as header">
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#menu" aria-expanded="false">
@@ -11,9 +11,8 @@
 		</div>
 		<div class="collapse navbar-collapse" id="menu">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#">Link</a></li>
-				<li><a href="#">Link</a></li>
+				<li ng-class="{active: header.active === '/home'}"><a href="#/home">Home</a></li>
+				<li ng-class="{active: header.active === '/todo'}"><a href="#/todo">Todo</a></li>
 			</ul>
 		</div>
 	</div>
