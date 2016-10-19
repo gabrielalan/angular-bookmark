@@ -38,3 +38,12 @@ main.ng-enter.ng-enter-active {
 	padding-top: 0px;
 	padding-bottom: 0px;
 }
+
+.slideIn.ng-leave-stagger, .slideIn.ng-enter-stagger {
+	transition-delay: 0.1s;
+	transition-duration: 0;
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+	border: 2px solid red;
+}

@@ -19,6 +19,10 @@ function MainController($http) {
 		});
 	};
 
+	me.removeAllTasks = function() {
+		me.list = [];
+	};
+
 	$http
 		.get('server/list.php')
 		.success(function(data){

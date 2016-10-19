@@ -1,5 +1,7 @@
 function RandomTaskController() {
-	this.task = this.list[Math.floor(Math.random() * this.list.length)];
+	var list = this.list || [];
+
+	this.task = list[Math.floor(Math.random() * list.length)];
 }
 
 angular

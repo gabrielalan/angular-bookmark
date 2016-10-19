@@ -1,4 +1,6 @@
-function routeConfig($routeProvider) {
+function routeConfig($routeProvider, $locationProvider) {
+	$locationProvider.html5Mode(true);
+
 	$routeProvider
 		.when('/home', {
 			templateUrl: 'src/Home/_home.html',
@@ -15,7 +17,7 @@ function routeConfig($routeProvider) {
 		});
 }
 
-routeConfig.$inject = ['$routeProvider'];
+routeConfig.$inject = ['$routeProvider', '$locationProvider'];
 
 angular
 	.module('todoApp')
